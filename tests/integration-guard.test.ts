@@ -1,0 +1,2 @@
+import { describe, expect, it } from 'vitest'; import { assertSafeIntegrationTarget } from '../lib/integration-guard';
+describe('integration guard',()=>{ it('rejects a non-local target',()=>expect(()=>assertSafeIntegrationTarget('https://production.example.com')).toThrow(/blocked/)); it('permits placeholder target',()=>expect(()=>assertSafeIntegrationTarget('https://your-project.supabase.co')).not.toThrow()); });

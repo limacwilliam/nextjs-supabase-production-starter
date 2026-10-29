@@ -1,0 +1,1 @@
+export function assertSafeIntegrationTarget(url = process.env.NEXT_PUBLIC_SUPABASE_URL): void { if (!url) throw new Error('Missing test URL'); const host = new URL(url).hostname; if (!host.includes('localhost') && !host.includes('127.0.0.1') && !host.includes('your-project.supabase.co')) throw new Error('Integration tests are blocked outside local or placeholder environments'); }
