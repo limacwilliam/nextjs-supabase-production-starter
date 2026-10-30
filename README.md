@@ -18,7 +18,7 @@ npm install
 npm run dev
 ```
 
-Apply `supabase/migrations/0001_notes.sql` in a development project. Never run integration tests against production; the test guard intentionally fails when it detects a production-like URL.
+Apply `supabase/migrations/0001_notes.sql` in a development project. The integration guard accepts only exact loopback hostnames; remote projects are blocked. The current suite tests this guard, not database integration.
 
 Read [architecture](docs/architecture.md), [runbook](docs/runbook.md), and [security policy](SECURITY.md).
 
